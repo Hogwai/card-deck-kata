@@ -32,12 +32,14 @@ Cloner le projet sur son poste
 #### Partie 1
 Se rendre le dossier et installer les dépendances java:
 ```
-$ cd card-deck-console
-$ mvn clean install
+cd card-deck-console
+```
+```
+mvn clean install
 ```
 Lancer le programme:
 ```
-$ mvn spring-boot:run
+mvn spring-boot:run
 ```
 
 #### Partie 2
@@ -51,39 +53,42 @@ CONNECTION LIMIT = -1;
 ```
 Se rendre le dossier et installer les dépendances java:
 ```
-$ cd card-deck-persistence
-$ mvn clean install
+cd card-deck-persistence
 ```
-
+```
+mvn clean install
+```
 Lancer le programme:
 ```
-$ mvn spring-boot:run
+mvn spring-boot:run
 ```
 
 Lancer les tests:
 ```
-$ mvn test
+mvn test
 ```
 #### Partie 3
 Créer un schéma nommé 'card-deck-kata' dans PostgreSQL s'il n'existe pas déjà
 
 Se rendre le dossier et installer les dépendances java:
 ```
-$ cd card-deck-webapp
-$ mvn clean install
+cd card-deck-webapp
 ```
-
+```
+mvn clean install
+```
 Lancer le programme:
 ```
-$ mvn spring-boot:run
+mvn spring-boot:run
 ```
 
 Se rendre dans le dossier frontend (src/main/frontend) et lancer Angular:
 ```
-$ cd src/main/frontend
-$ ng serve
+cd src/main/frontend
 ```
-
+```
+ng serve
+```
 Ouvrir son navigateur et se rendre à l'adresse suivante:
 ```
 http://localhost:4200/
