@@ -45,7 +45,7 @@ mvn spring-boot:run
 #### Partie 2
 Créer une base de données nommée 'card-deck-kata' dans PostgreSQL
 ```
-CREATE DATABASE test
+CREATE DATABASE card-deck-kata
 WITH
 OWNER = postgres
 ENCODING = 'UTF8'
