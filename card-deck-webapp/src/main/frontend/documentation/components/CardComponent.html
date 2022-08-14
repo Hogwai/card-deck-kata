@@ -68,6 +68,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Card component</p>
+
+    </p>
 
 
     <p class="comment">
@@ -180,12 +187,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/card/card.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/card/card.component.ts:18</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -247,14 +256,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/card/card.component.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/card/card.component.ts:35</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get all cards</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -284,14 +295,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/card/card.component.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/card/card.component.ts:28</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Retrieve all cards on init</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -321,14 +334,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/card/card.component.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/app/card/card.component.ts:45</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get all cards but shuffled</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -368,10 +383,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/card/card.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/card/card.component.ts:18</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>cards array</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -385,6 +406,9 @@
 import { CardService } from &#x27;../card.service&#x27;
 import { Card } from &#x27;../card&#x27;;
 
+/**
+ * Card component
+ */
 @Component({
   selector: &#x27;app-card&#x27;,
   templateUrl: &#x27;./card.component.html&#x27;,
@@ -392,13 +416,26 @@ import { Card } from &#x27;../card&#x27;;
 })
 export class CardComponent implements OnInit {
 
+  /**
+   * cards array
+   */
   cards: Card[] &#x3D; [];
+
+  /**
+   * Constructor
+   */
   constructor(private cardService: CardService) { }
 
+  /**
+   * Retrieve all cards on init
+   */
   ngOnInit(): void {
     this.getAllCards();
   }
 
+  /**
+   * Get all cards
+   */
   getAllCards(){
     this.cardService.getCards().subscribe((data: Card[]) &#x3D;&gt; {
       console.log(data);
@@ -406,6 +443,9 @@ export class CardComponent implements OnInit {
     });
   }
 
+  /**
+   * Get all cards but shuffled
+   */
   shuffleAllCards(){
     this.cardService.shuffleCards().subscribe((data: Card[]) &#x3D;&gt; {
       console.log(data);

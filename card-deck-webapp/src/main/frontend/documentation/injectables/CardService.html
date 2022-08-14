@@ -62,6 +62,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Service responsible for handling cards retrieving</p>
+
+            </p>
 
 
 
@@ -122,12 +129,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/card.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/card.service.ts:17</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -185,17 +194,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/card.service.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/card.service.ts:29</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get all cards from the backend</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="../classes/Card.html" target="_self" >Observable&lt;Card[]&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>all cards</p>
 
                     </div>
                 </td>
@@ -222,17 +239,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/card.service.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/app/card.service.ts:37</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get all shuffled cards</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="../classes/Card.html" target="_self" >Observable&lt;Card[]&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>all cards but shuffled</p>
 
                     </div>
                 </td>
@@ -270,10 +295,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/card.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/card.service.ts:17</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>base backend url</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -288,19 +319,37 @@ import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
 import { Card } from &#x27;./card&#x27;;
 
+/**
+ * Service responsible for handling cards retrieving
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class CardService {
 
+  /**
+   * base backend url
+   */
   private baseUrl &#x3D; &quot;http://localhost:8081/cards/&quot;;
 
+  /**
+   * Constructor
+   * @param {HttpClient} http
+   */
   constructor(private http: HttpClient) { }
 
+  /**
+   * Get all cards from the backend
+   * @returns all cards
+   */
   getCards(): Observable&lt;Card[]&gt;{
     return this.http.get&lt;Card[]&gt;(&#x60;${this.baseUrl}&#x60;);
   }
 
+  /**
+   * Get all shuffled cards 
+   * @returns all cards but shuffled
+   */
   shuffleCards(): Observable&lt;Card[]&gt;{
     return this.http.get&lt;Card[]&gt;(&#x60;${this.baseUrl}shuffle&#x60;);
   }
