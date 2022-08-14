@@ -93,4 +93,5 @@ Ouvrir son navigateur et se rendre à l'adresse suivante:
 ```
 http://localhost:4200/
 ```
+La documentation est accessible ici: [documentation](https://hogwai.github.io/card-deck-kata/card-deck-webapp/src/main/frontend/documentation/index.html)
 
